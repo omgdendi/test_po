@@ -28,21 +28,21 @@ public class SinTest {
 
     @Test
     public void testGetSeriesThird() {
-        double x = 1.5;
+        double x = -1.5;
         double e = 0.0001;
         assertEquals(Math.sin(x), sin.getSeries(x, e), e);
     }
 
     @Test
     public void testGetSeriesFourth() {
-        double x = 2;
+        double x = -2;
         double e = 0.00001;
         assertEquals(Math.sin(x), sin.getSeries(x, e), e);
     }
 
     @Test
     public void testGetSeriesFifth() {
-        double x = 2.5;
+        double x = 3;
         double e = 0.0000001;
         assertEquals(Math.sin(x), sin.getSeries(x, e), e);
     }
@@ -51,6 +51,13 @@ public class SinTest {
     public void testGetSeriesSixth() {
         double x = 3;
         double e = 0.0000000000001;
+        assertEquals(Math.sin(x), sin.getSeries(x, e), e);
+    }
+
+    @Test(expected = OverflowException.class)
+    public void testGetSeriesSeventh() {
+        double x = 100;
+        double e = 0.01;
         assertEquals(Math.sin(x), sin.getSeries(x, e), e);
     }
 

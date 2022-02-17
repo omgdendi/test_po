@@ -17,8 +17,10 @@ public class Sin {
         do {
             preSeriesSum = seriesSum;
             seriesSum = preSeriesSum + Math.pow(-1, i-1)/getFactorial(2*i - 1)*Math.pow(x, 2*i - 1);
+            //System.out.println(i + ") " + seriesSum + " " + getFactorial(2*i - 1));
             i++;
         } while (Math.abs(preSeriesSum - seriesSum) > e);
+        //System.out.println();
         return seriesSum;
     }
 }
