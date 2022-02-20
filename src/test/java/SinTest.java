@@ -12,6 +12,21 @@ public class SinTest {
         sin = new Sin();
     }
 
+
+    @Test
+    public void testPiGetSeriesFirst() {
+       double x = Math.PI;
+       double e = 0.001;
+       assertEquals(0, sin.getSeries(x, e), e);
+    }
+
+    @Test
+    public void testPiGetSeriesSecond() {
+        double x = Math.PI/2;
+        double e = 0.001;
+        assertEquals(1, sin.getSeries(x, e), e);
+    }
+
     @Test
     public void testGetSeriesFirst() {
         double x = 0.5;
