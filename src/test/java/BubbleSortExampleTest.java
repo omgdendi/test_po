@@ -12,7 +12,20 @@ public class BubbleSortExampleTest {
     }
 
     @Test
-    public void testBubbleSortWithIntNumbersFirst() {
+    public void testBubbleSortWithDataFromUsfca() {
+        float[] arr = {20, 96, 1, 54, 97, 61, 18, 64, 13, 27, 90,
+                68, 9, 97, 55, 69, 16, 70, 52, 22, 27, 9, 79, 71,
+                47, 41, 11, 4, 64, 58, 11, 8, 20, 28, 2, 41, 17,
+                67, 68, 7, 86, 77, 99, 62, 59, 61, 9, 63, 82, 53};
+        float[] sortArr = {1, 2, 4, 7, 8, 9, 9, 9, 11, 11, 13, 16,
+                17, 18, 20, 20, 22, 27, 27, 28, 41, 41, 47, 52, 53,
+                54, 55, 58, 59, 61, 61, 62, 63, 64, 64, 67, 68, 68,
+                69, 70, 71, 77, 79, 82, 86, 90, 96, 97, 97, 99};
+        assertArrayEquals(sortArr, bubbleSortExample.bubbleSort(arr), 0);
+    }
+
+    @Test
+    public void testBubbleSortWithIntNumbers() {
         float[] arr = {5, 2, 6, 9, 1, 3, 10};
         float[] sortArr = {1, 2, 3, 5, 6, 9, 10};
         assertArrayEquals(sortArr, bubbleSortExample.bubbleSort(arr), 0);

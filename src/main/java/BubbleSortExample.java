@@ -2,7 +2,7 @@ public class BubbleSortExample {
 
     public float[] bubbleSort(float[] arr) {
         int n = arr.length;
-        float temp = 0;
+        float temp;
         for (int i = 0; i < n; i++) {
             for (int j = 1; j < (n - i); j++) {
                 if (arr[j - 1] > arr[j]) {
