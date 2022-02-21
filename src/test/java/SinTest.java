@@ -13,64 +13,44 @@ public class SinTest {
     }
 
 
-    @Test
-    public void testPiGetSeriesFirst() {
-       double x = Math.PI;
-       double e = 0.001;
-       assertEquals(0, sin.getSeries(x, e), e);
-    }
 
     @Test
-    public void testPiGetSeriesSecond() {
+    public void testGetSeriesWithPi() {
         double x = Math.PI/2;
         double e = 0.001;
         assertEquals(1, sin.getSeries(x, e), e);
     }
 
     @Test
-    public void testGetSeriesFirst() {
+    public void testGetSeriesSimple() {
         double x = 0.5;
         double e = 0.1;
         assertEquals(Math.sin(x), sin.getSeries(x, e), e);
     }
 
     @Test
-    public void testGetSeriesSecond() {
-        double x = 1;
-        double e = 0.01;
-        assertEquals(Math.sin(x), sin.getSeries(x, e), e);
-    }
-
-    @Test
-    public void testGetSeriesThird() {
+    public void testGetSeriesWithNegativeNumber() {
         double x = -1.5;
         double e = 0.0001;
         assertEquals(Math.sin(x), sin.getSeries(x, e), e);
     }
 
     @Test
-    public void testGetSeriesFourth() {
-        double x = -2;
-        double e = 0.00001;
-        assertEquals(Math.sin(x), sin.getSeries(x, e), e);
-    }
-
-    @Test
-    public void testGetSeriesFifth() {
+    public void testGetSeriesWithSmallAccuracy() {
         double x = 3;
         double e = 0.0000001;
         assertEquals(Math.sin(x), sin.getSeries(x, e), e);
     }
 
     @Test(expected = OverflowException.class)
-    public void testGetSeriesSixth() {
+    public void testGetSeriesWithVerySmallAccuracy() {
         double x = 3;
         double e = 0.0000000000001;
         assertEquals(Math.sin(x), sin.getSeries(x, e), e);
     }
 
     @Test(expected = OverflowException.class)
-    public void testGetSeriesSeventh() {
+    public void testGetSeriesWithBigNumber() {
         double x = 100;
         double e = 0.01;
         assertEquals(Math.sin(x), sin.getSeries(x, e), e);
