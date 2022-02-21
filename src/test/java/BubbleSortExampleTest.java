@@ -39,6 +39,13 @@ public class BubbleSortExampleTest {
     }
 
     @Test
+    public void testBubbleSortWithNullData() {
+        float[] arr = {};
+        float[] sortArr = {};
+        assertArrayEquals(sortArr, bubbleSortExample.bubbleSort(arr), 0);
+    }
+
+    @Test
     public void testBubbleSortWithSmallData() {
         float[] arr = {1};
         float[] sortArr = {1};
